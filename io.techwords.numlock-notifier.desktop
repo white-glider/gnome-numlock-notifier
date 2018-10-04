@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=NumLock Notifier
+Comment=Notifies on every change to NumLock state
+Exec=/home/felix/bin/numlock-notifier.sh
+Hidden=false
+Icon=input-keyboard
+Terminal=false
+OnlyShowIn=GNOME;
+Categories=GNOME;GTK;System;
+Keywords=keyboard;monitor;numlock;device;input;source;lock;gsettings;
+X-GNOME-Autostart-enabled=true
+X-GNOME-UsesNotifications=true

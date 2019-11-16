@@ -26,9 +26,9 @@ function tidy_up {
 trap "tidy_up 2>/dev/null" EXIT
 
 mkfifo $IPC 2>/dev/null
-gsettings monitor org.gnome.settings-daemon.peripherals.keyboard numlock-state > $IPC &
+gsettings monitor org.gnome.desktop.peripherals.keyboard numlock-state > $IPC &
 GSET_PID=$!
 while read status < $IPC; do
-	MSG=$(echo $status | awk '{split($2, p, "'\''"); print toupper(p[2])}')
+	MSG=$(echo $status | awk '{print ($2 == "true") ? "ON" : "OFF"}')
 	notify-send -u low -c device -i /usr/share/icons/Adwaita/scalable/devices/input-keyboard-symbolic.svg "NumLock" "<b>$MSG</b>"
 done

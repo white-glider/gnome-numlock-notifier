@@ -12,7 +12,7 @@ That proved to be annoying because I was constantly getting a 7 when I pressed t
 
 This script was written in [BASH](https://www.gnu.org/software/bash/) which should come pre-installed on almost all Linux distributions. It depends on [Gnome's GLib](https://developer.gnome.org/glib/) (`gsettings`) and [Gnome's libnotify](https://developer.gnome.org/libnotify/) (`notify-send`).
 
-It was successfully tested on a [Fedora](https://getfedora.org/) 28 Workstation running GNU BASH 4.4.23, GLib 2.56.3 and libnotify 0.7.7.
+It was successfully tested on a [Fedora](https://getfedora.org/) 31 Workstation running GNU BASH 5.0.7, GLib 2.62.1 and libnotify 0.7.8.
 
 * For other Linux distributions you might want to adjust the the path to the `input-keyboard-symbolic.svg` file inside the shell script, because it will likely be different.
 
@@ -39,7 +39,7 @@ You should then see something like the following:
 ```
 flock -en /run/user/1000/numlock-notifier.lock /home/me/bin/numlock-notifier.sh
   └─numlock-notifie /home/me/bin/numlock-notifier.sh
-      └─gsettings monitor org.gnome.settings-daemon.peripherals.keyboard numlock-state
+      └─gsettings monitor org.gnome.desktop.peripherals.keyboard numlock-state
 ```
 
 Moreover, you can check if the two necessary files were also created by executing the following command:
